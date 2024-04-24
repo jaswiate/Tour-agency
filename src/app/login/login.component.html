@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Login with your account</h2>
+    <form [formGroup]="login_form">
+        <div class="inpt">
+            <label for="name">Email</label>
+            <input id="name"
+                   type="text"
+                   formControlName="login"
+            />
+        </div>
+        <div class="inpt">
+            <label for="type">Password</label>
+            <input id="password"
+                   type="password"
+                   formControlName="password"
+            />
+        </div>
+    </form>
+    <button type="submit"
+            class="btn"
+            (click)="submitForm()">
+            Login
+    </button>
+    <p *ngIf="showError">Wprowadzono niepoprawne dane :(</p>
+    <p *ngIf="showOk">Zalogowano :)</p>
+</div>

@@ -1,0 +1,21 @@
+<div class="rate">
+    <p #rate class="like" 
+        (click)="rated('+')">
+        :)
+    </p>
+    <p class="amount gura">
+        {{tour_likes}}
+    </p>
+    <p #rate class="dislike"
+        (click)="rated('-')">
+        :(
+    </p>
+    <p class="amount dul">
+        {{tour_dislikes}}
+    </p>
+    <p class="sum" 
+        *ngIf="tour_likes + tour_dislikes != 0" 
+        [ngStyle]="{'color': (tour_likes / (tour_dislikes + tour_likes) >= 0.5) ? 'green' : 'red'}">
+        {{tour_likes / (tour_dislikes + tour_likes) * 100 | number: '1.0-0'}}% 
+    </p>    
+</div>

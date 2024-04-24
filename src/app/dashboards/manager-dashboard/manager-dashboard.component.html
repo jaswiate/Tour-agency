@@ -1,0 +1,28 @@
+<ng-container>
+    <h1>Zarządzanie Wycieczkami</h1>
+    <ng-container *ngIf="tours != []" class="lol">
+        <div><table>
+            <tr>
+                <th>id</th>
+                <th>Nazwa</th>
+                <th>Opcje</th>
+            </tr>
+            <tr *ngFor="let t of tours">
+                <td>{{t.id}}</td>
+                <td>{{t.name}}</td>
+                <td>
+                    <button (click)="delete(t.id)"
+                            class="btn">
+                            Usuń
+                    </button>
+                    <button routerLink="mod/{{t.id}}"
+                            class="btn">
+                            Zmodyfikuj
+                    </button>
+                </td>
+            </tr>
+        </table></div>
+    </ng-container>
+
+    <app-tour-add></app-tour-add>
+</ng-container>

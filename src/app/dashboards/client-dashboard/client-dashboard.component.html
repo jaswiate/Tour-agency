@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Informacje o twoim profilu</h2>
+    <ul>
+        <li><span>Email: </span>{{auth.userData.email}}</li>
+        <li><span>Zweryfikowany email: </span>{{auth.userData.emailVerified}}</li>
+        <li><span>UserID: </span>{{auth.userData.uid}}</li>
+        <li><span>Konto utworzono: </span>{{auth.userData.metadata.creationTime}}</li>
+        <li><span>Ostatnie logowanie: </span>{{auth.userData.metadata.lastSignInTime}}</li>
+    </ul>
+    <h3>Twoje uprawnienia</h3>
+    <ul>
+        <li><span>Guest: </span>{{auth.userRoles?.guest}}</li>
+        <li><span>Client: </span>{{auth.userRoles?.client}}</li>
+        <li><span>Manager: </span>{{auth.userRoles?.manager}}</li>
+        <li><span>Admin: </span>{{auth.userRoles?.admin}}</li>
+        <li><span>Banned: </span>{{auth.userRoles?.banned}}</li>
+    </ul>
+</div>

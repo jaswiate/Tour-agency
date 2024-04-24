@@ -1,0 +1,17 @@
+<ng-container *ngIf="cart_ser.cart.length > 0">
+    <div class="container">
+        <div *ngFor="let item of cart_ser.cart; index as idx">
+            <h3>{{idx + 1}}. {{item.name}} - ${{item.price}}</h3>
+            <div class="btn" (click)="remove_click(item)">Usuń</div>
+        </div>
+        <h2>Razem: ${{get_cart_sum() | number: '1.0-2'}}</h2>
+        <button (click)="order()" class="btnn">Potwierdź zamówienie</button>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="cart_ser.cart.length == 0">
+    <h1>Koszyk jest pusty</h1>
+    <a routerLink="/tours">
+        <h1>Zamów teraz :)</h1>
+    </a>
+</ng-container>

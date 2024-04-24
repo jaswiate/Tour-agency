@@ -1,0 +1,88 @@
+<div class="main">
+    <a routerLink="/">
+        <div class="logo">
+            <h1>Nowy Horyzont</h1>
+        </div>
+    </a>
+    <nav class="navbar">
+        <div class="long">
+            <a routerLink="/tours">
+                <div class="long-item" 
+                    routerLinkActive="active-link">
+                    Wycieczki
+                </div>
+            </a>
+            <a routerLink="/aboutus">
+                <div class="long-item" 
+                    routerLinkActive="active-link">
+                    O nas
+                </div>
+            </a>
+            <a routerLink="/register" *ngIf="auth.userData == null">
+                <div class="long-item"
+                     routerLinkActive="active-link">
+                     Register
+                </div>
+            </a>
+            <a routerLink="/login" *ngIf="auth.userData == null">
+                <div class="long-item"
+                     routerLinkActive="active-link">
+                     Log In
+                </div>
+            </a>
+            <div class="long-item"
+                 (click)="auth.signOut()"
+                 *ngIf="auth.userData != null">
+                 Log Out
+            </div>
+        </div>
+
+        <div class="hamburger">
+            <input type="checkbox" id="ham-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <nav class="hamburger-navbar">
+                <div class="hamburger-item">
+                    <a routerLink="/tours">
+                        <div class="item" 
+                             routerLinkActive="active-link">
+                             Wycieczki
+                        </div>
+                    </a>
+                </div>
+                <div class="hamburger-item">
+                    <a routerLink="/aboutus">
+                        <div class="item" 
+                             routerLinkActive="active-link">
+                             O nas
+                        </div>
+                    </a>
+                </div>
+                <div class="hamburger-item">
+                    <a routerLink="/register" *ngIf="auth.userData == null">
+                        <div class="item" 
+                             routerLinkActive="active-link">
+                             Register
+                        </div>
+                    </a>
+                </div>
+                <div class="hamburger-item">
+                    <a routerLink="/login" *ngIf="auth.userData == null">
+                        <div class="item" 
+                             routerLinkActive="active-link">
+                             Login
+                        </div>
+                    </a>
+                </div>
+                <div class="hamburger-item">
+                    <div class="item"
+                         (click)="auth.signOut()"
+                         *ngIf="auth.userData != null">
+                         Log Out
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </nav>
+</div>

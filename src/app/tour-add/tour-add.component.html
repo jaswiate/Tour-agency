@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Dodaj wycieczkę</h2>
+    <form [formGroup]="tour_add_form">
+        <div>
+            <label for="name">Nazwa wycieczki:</label>
+            <input id="name" type="text" formControlName="tourname"/>
+        </div>
+        <div>
+            <label for="country">Kraj docelowy wycieczki:</label>
+            <input id="country" type="text" formControlName="tourcountry"/>
+        </div>
+        <div>
+            <label for="start">Start wycieczki:</label>
+            <input id="start" type="text" formControlName="tourstart"/>
+        </div> 
+        <div>
+            <label for="end">Koniec wycieczki:</label>
+            <input id="end" type="text" formControlName="tourend"/>
+        </div>
+        <div>
+            <label for="price">Koszt wycieczki:</label>
+            <input id="price" type="text" formControlName="tourprice"/>
+        </div>
+        <div>
+            <label for="place">Maksymalna liczba miejsc:</label>
+            <input id="place" type="text" formControlName="tourplace"/>
+        </div>
+        <div>
+            <label for="image">Adres url zdjęcia:</label>
+            <input id="image" type="text" formControlName="tourimage"/>
+        </div>
+        <div>
+            <label for="desc">Opis wycieczki:</label>
+            <input id="desc" type="text" formControlName="tourdesc"/>
+        </div>
+        <button type="submit" (click)="submit()">DODAJ</button>
+        <p *ngIf="error">Wprowadzono złe dane</p>
+        <p *ngIf="git">Dodano wycieczkę :)</p>
+    </form>
+</div>

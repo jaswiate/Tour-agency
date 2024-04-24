@@ -1,0 +1,46 @@
+.cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+}
+
+aside {
+    justify-self: baseline;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 15%;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+    padding: 20px;
+    transition: all 300ms;
+}
+
+main {
+    background-color: inherit;
+    border-radius: 10px;
+    color: rgb(109, 109, 109);
+    min-width: 500px;
+    max-width: 1300px;
+    margin: 3em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: +1;
+}
+
+a:hover {
+    color: rgb(0, 190, 190);
+    font-weight: bolder;
+}
+
+

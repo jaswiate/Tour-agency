@@ -1,0 +1,45 @@
+/* rating */
+.rate {
+    min-height: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 18px;
+}
+
+p {
+    margin: 0.1em;
+    padding: 0.1em;
+}
+
+.like, .dislike {
+    user-select: none;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.gura {
+    color:green;
+    font-weight: bold;
+}
+
+.dul {
+    color:rgb(150, 0, 0);
+    font-weight: bold;
+}
+
+.like:hover, .dislike:hover {
+    cursor: pointer;
+}
+
+.like:hover {
+    outline: 2px solid green;
+}
+
+.dislike:hover {
+    outline: 2px solid red;
+}
+
+.sum {
+    margin-left: 6px;
+    font-weight: bold;
+}

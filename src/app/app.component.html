@@ -1,0 +1,30 @@
+<nav>
+  <app-navbar></app-navbar>
+</nav>
+
+<div class="cont">
+  <aside>
+    <a *ngIf="auth.userRoles.admin == true"
+      routerLink="admin">
+      <div class="item" routerLinkActive="active-link">
+        Admin Dashboard
+      </div>
+    </a>
+    <a *ngIf="auth.userRoles.manager == true"
+      routerLink="manager">
+      <div class="item" routerLinkActive="active-link">
+        Manager Dashboard
+      </div>
+    </a>
+    <a *ngIf="auth.userRoles.client == true"
+      routerLink="client">
+      <div class="item" routerLinkActive="active-link">
+        Hello {{auth.userData.email}}
+      </div>
+    </a>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

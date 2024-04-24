@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tour-agency-9fec2": {
+      "hosting": {
+        "tour-agency": [
+          "tour-agency-9fec2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tour-agency-9fec2"
+  }
+}

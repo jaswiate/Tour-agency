@@ -1,0 +1,46 @@
+<div class="in">
+    <div class="btn"><a routerLink="/tours"><= Powrót do listy</a></div>
+</div>
+
+<ng-container *ngIf="tour.length > 0">
+    <div class="wrapper">
+        <h3> 
+            {{tour[0].name | uppercase}}
+        </h3>
+        <p class="country">
+            {{tour[0].country | uppercase}}
+        </p>
+        <img src="{{tour[0].image}}">
+        <p>Zobacz inne zdjęcia!</p>
+        <div class="pics">
+            <span class="np" (click)="nextPic()"><-</span>
+            <span class="np" (click)="previousPic()">-></span>
+        </div>
+        <p class="desc">
+            {{tour[0].desc}}
+        </p>
+        <p class="tour-dates">
+            Wycieczka odbywa się: 
+            {{tour[0].start}}, {{tour[0].end}}
+        </p>
+        <h3>W bardzo atrakcyjnej cenie:
+            <span class="price">{{tour[0].currency}}{{tour[0].price}}</span>
+        </h3>
+        <h2>Opinie klientów</h2>
+        <div class="rating">
+            <app-tour-rating 
+                (rating_change)="ratingEventHandler(tour[0], $event)" 
+                [tour_likes]="tour[0].likes" 
+                [tour_dislikes]="tour[0].dislikes">
+            </app-tour-rating>
+        </div>
+    </div>
+    <ng-container *ngIf="revs.length > 0">
+        <div class="review" *ngFor="let review of revs">
+            <span>Klient:</span><span>{{review.nick}}</span><p></p>
+            <span>Data:</span><span>{{review.date}}</span><p></p>
+            <span>Treść:</span><span>{{review.text}}</span><p></p>
+        </div>
+    </ng-container>
+    <app-tour-review (newReviewEvent)="addReview($event)"></app-tour-review>
+</ng-container>

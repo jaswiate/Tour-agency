@@ -1,0 +1,189 @@
+img {
+    height: 230px;
+    width: 230px;
+    align-self: center;
+    border-radius: 50%;
+    border: 7px solid rgb(0, 11, 12);
+    margin: 5px;
+    transition: all 300ms;
+}
+
+img:hover {
+    box-shadow: 0px 0px 40px 10px rgb(0, 190, 190);
+    cursor: pointer;
+}
+
+.btnn {
+    background-color: azure;
+    position: absolute;
+    padding: 10px;
+    border-radius: 15px;
+    transform: translateX(-180%) translateY(470%);
+    transition: all 300ms;
+}
+
+.btnn:hover {
+    box-shadow: 0px 0px 20px 10px rgb(0, 190, 190);
+}
+
+.cart {
+    transform: translateX(-14%) translateY(1200%);
+}
+
+.l {
+    color: white;
+}
+
+i {
+    color: rgb(0, 11, 12);
+    font-size: 55px;
+}
+
+h3 {
+    margin: 0;
+    align-self: center;
+    font-weight: bolder;
+    color: rgb(0, 11, 12);
+    border: 3px solid rgb(0, 11, 12);
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+
+.tours {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(-5%);
+}
+
+.tour {
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+    border-radius: 50px;
+    border: 3px solid rgb(56, 49, 68);
+    background-color: rgb(207, 207, 207);
+    max-width: 350px;
+    box-shadow: 0 0 19px 5px rgb(56, 49, 68);
+    align-items: center;
+}
+
+.country {
+    align-self: center;
+    font-weight: bolder;
+}
+
+.desc {
+    font-size: 13px;
+    align-self: center;
+    margin-top: 2px;
+}
+
+.tour-dates {
+    font-weight: bolder;
+    font-size: 14px;
+    align-self: center;
+}
+
+.bottom {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.price {
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row; 
+}
+
+.btn {
+    font-size: 22px;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-weight: bolder;
+    user-select: none;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: 300ms ease all;
+}
+
+.add {
+    background-color:green;
+    padding: 0px 7px 3px;
+}
+
+.add:hover {
+    background-color: rgb(84, 168, 0);
+    transition: 300ms ease all;
+}
+
+.remove {
+    background-color: rgb(156, 0, 0);
+    padding: 0px 9px 3px;
+}
+
+.remove:hover {
+    background-color: rgb(253, 87, 87);
+    transition: 300ms ease all;
+}
+
+.bottom-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
+    min-height: 25px;
+}
+
+.amount-info {
+    font-size: 14px;
+    margin-right: 7px;
+}
+
+.bottom-info-text {
+    color: rgb(156, 0, 0);
+    margin-left: 60%;
+}
+
+.top-price {
+    border: 3px solid green;
+    box-shadow: 0 0 19px 10px green;
+}
+
+.bottom-price {
+    border: 3px solid rgb(156, 0, 0);
+    box-shadow: 0 0 19px 10px rgb(156, 0, 0);
+}
+
+.delete {
+    position: absolute;
+    background-color: rgb(253, 87, 87);
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 5px;
+    transition: 300ms ease all;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-weight: bolder;
+    border: 1px solid black;
+}
+
+.delete:hover{
+    transition: 300ms ease all;
+    padding: 5px 9px;
+}

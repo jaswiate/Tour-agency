@@ -1,0 +1,73 @@
+<a routerLink="/cart" class="btnn">
+    <i class="material-icons">shopping_cart</i>
+</a>
+<div class="cart">
+    <p class="l">Wartośc koszyka ${{get_cart_sum() | number: '1.0-2'}}</p>
+    <p class="l">{{get_amount(tours)}} wycieczek</p>
+</div>
+
+
+<div class="tours" *ngIf="tours != []">
+    <div class="tour" [ngClass]="{
+        'top-price': tour.price == get_max_price(tours).price,
+        'bottom-price': tour.price == get_min_price(tours).price}"
+        *ngFor="let tour of tours">
+        <div class="clickable" routerLink="{{tour.id}}">
+            <img src="{{tour.image}}" alt="{{tour.name}}"/>
+        </div>
+        <h3> 
+            {{tour.name | uppercase}}
+        </h3>
+        <p class="country">
+            {{tour.country | uppercase}}
+        </p>
+<!-- 
+        <p class="desc">
+            {{tour.desc}}
+        </p>
+        <p class="tour-dates">
+            {{tour.start}}, {{tour.end}}
+        </p>
+-->
+        <div class="bottom">
+            <span class="price">
+                {{tour.currency}}{{tour.price}}
+            </span>
+
+            <div class="btns">
+                <div *ngIf="count_cart(tour) < tour.place" 
+                    class="add btn" 
+                    (click)="add_click(tour)">
+                    +
+                </div>
+                <div *ngIf="count_cart(tour) > tour.place"
+                     class="no-ava btn">
+                     Wycieczka niedostepna :(
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom-info">
+            <!-- TOUR RATING -->
+            <!-- <app-tour-rating 
+                (rating_change)="ratingEventHandler(tour, $event)" 
+                [tour_likes]="tour.likes" 
+                [tour_dislikes]="tour.dislikes">
+            </app-tour-rating> -->
+            <p class="amount-info">
+                amount: {{count_cart(tour)}}
+            </p>
+        </div>
+        <p *ngIf="tour.place - count_cart(tour) <= 3" 
+            class="bottom-info-text">
+            {{tour.place - count_cart(tour)}} tours left
+        </p>
+        <p *ngIf="tour.place - count_cart(tour) > 3" 
+            class="bottom-info-text">
+        </p>
+        <div class="delete" 
+            (click)="delete_tour(tour)">
+            X
+        </div>
+    </div>
+</div>
